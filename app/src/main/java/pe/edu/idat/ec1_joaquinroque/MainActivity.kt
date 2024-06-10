@@ -10,6 +10,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
@@ -38,7 +40,11 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun AppContent() {
-    Column(modifier = Modifier.padding(16.dp)) {
+    Column(
+        modifier = Modifier
+            .padding(16.dp)
+            .verticalScroll(rememberScrollState())
+        ) {
         SalarioSemanalSection()
         Divider(modifier = Modifier.padding(vertical = 8.dp))
         PromedioPracticasSection()
